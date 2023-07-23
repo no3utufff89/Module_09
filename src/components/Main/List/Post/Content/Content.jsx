@@ -1,21 +1,19 @@
 import PropTypes from 'prop-types';
 import style from './Content.module.css';
+import {Text} from '../../../../../UI/Text';
 
-export const Content = ({title, author}) => {
-  console.log(style);
-  return (
-    <div className={style.content}>
-      <h2 className={style.title}>
-        <a href="#post" className={style.linkPost}>
-          {title}
-        </a>
-      </h2>
-      <a className={style.linkAuthor} href="#author">
-        {author}
-      </a>
-    </div>
-  );
-};
+export const Content = ({title, author}) => (
+  <div className={style.content}>
+    <Text As='h2' className={style.title}>
+      <Text As='a' size={18} tsize={24} href="#post" className={style.linkPost}>
+        {title}
+      </Text>
+    </Text>
+    <Text As='a' color='orange' size={12} tsize={14} className={style.linkAuthor} href="#author">
+      {author}
+    </Text>
+  </div>
+);
 
 Content.propTypes = {
   title: PropTypes.string,

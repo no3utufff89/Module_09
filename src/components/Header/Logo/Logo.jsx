@@ -1,9 +1,17 @@
 import style from './Logo.module.css';
-import logo from './img/logo.svg';
-export const Logo = () => {
-  return (
-      <a className={style.link} href='/'>
-        <img className={style.logo} src={logo} alt='Логотип Blogget'/>
-      </a>
-  )
-}
+import SVG from '../../../UI/SVG';
+
+export const Logo = () => (
+  <>
+    <a className={style.link} href='/'>
+      <SVG
+        name ='logo'
+        width={50}
+        height={50}
+        title='Логотип'
+      />
+    </a>
+
+  </>
+
+);

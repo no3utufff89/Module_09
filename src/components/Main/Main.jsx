@@ -9,6 +9,5 @@ export const Main = () => (
       <Tabs/>
       <List/>
     </Layout>
-
   </main>
 );
