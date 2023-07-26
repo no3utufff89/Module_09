@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import noPhoto from './img/notphoto.jpg';
 import style from './Avatar.module.css';
 
-export const Avatar = ({title}) => (
-  <img className={style.img} src={noPhoto} alt={title}/>
+export const Avatar = ({title, img}) => (
+  <img className={style.img} src={img} alt={title}/>
 );
 
 Avatar.propTypes = {
   title: PropTypes.string,
+  img: PropTypes.string,
 };

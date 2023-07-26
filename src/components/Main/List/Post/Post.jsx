@@ -7,13 +7,13 @@ import Rating from './Rating';
 import Delete from './Delete';
 
 export const Post = ({postData}) => {
-  const {title, author, ups, date} = postData;
+  const {title, author, ups, created, thumbnail} = postData;
   return (
     <li className={style.post}>
-      <Avatar title={title}/>
+      <Avatar title={title} img={thumbnail}/>
       <Content title={title} author={author}/>
       <Rating ups={ups}/>
-      <Date date={date}/>
+      <Date date={created}/>
       <Delete/>
     </li>
   );
