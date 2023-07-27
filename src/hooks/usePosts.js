@@ -8,6 +8,8 @@ export const usePosts = () => {
   const arr = [];
 
   useEffect(() => {
+    if (!token) return;
+
     fetch(`${URL_API}/best`, {
       headers: {
         Authorization: `bearer ${token}`,
