@@ -25,7 +25,6 @@ export const usePosts = () => {
         postData.data.children.map(item => {
           arr.push(item.data);
         });
-        console.log(arr);
         return arr;
       })
       .then(data => setPosts(data))
