@@ -1,15 +1,21 @@
 import style from './List.module.css';
 import Post from './Post';
-import {useContext} from 'react';
-import {postsContext} from '../../../context/postsContext';
+import {usePosts} from '../../../hooks/usePosts';
+import Preloader from '../../../UI/Preloader';
 
 export const List = () => {
-  const {posts} = useContext(postsContext);
+  const [posts, loading] = usePosts();
   return (
-    <ul className={style.list}>
-      {posts.map((postData) => (
-        <Post key={postData.id} postData={postData} />
-      ))}
-    </ul>
+    <>
+      {loading ? (
+        <Preloader/>
+      ) : (
+        <ul className={style.list}>
+          {posts.map((postData) => (
+            <Post key={postData.id} postData={postData} />
+          ))}
+        </ul>
+      )}
+    </>
   );
 };

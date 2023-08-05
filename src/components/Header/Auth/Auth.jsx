@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import {ReactComponent as AuthIcon} from './img/login.svg';
 import {Text} from '../../../UI/Text';
 import {urlAuth} from '../../../api/auth';
-import {useContext} from 'react';
-import {authContext} from '../../../context/authContext';
 import {useDispatch} from 'react-redux';
-import {deleteToken} from '../../../store';
+import {deleteToken} from '../../../store/tokenReducer';
+import {useAuth} from '../../../hooks/useAuth';
+import Preloader from '../../../UI/Preloader';
 
 export const Auth = () => {
-  const {auth, clearAuth} = useContext(authContext);
+  const [auth, loading, clearAuth] = useAuth();
 
   const dispatch = useDispatch();
 
@@ -26,7 +26,7 @@ export const Auth = () => {
 
   return (
     <div className={style.container}>
-      {auth.name ? (
+      {loading ? (<Preloader/>) : auth.name ? (
         <button className={style.btn} onClick={handleLogoutToggle}>
           <img className={style.img} src={auth.img} title={auth.name} alt={`Аватар ${auth.name}`}/>
           <Text>{auth.name}</Text>

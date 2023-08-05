@@ -2,12 +2,12 @@ import style from './FormComment.module.css';
 import {Text} from '../../../../../UI/Text';
 import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {updateComment} from '../../../../../store';
+import {updateComment} from '../../../../../store/commentReducer';
 
 
 export const FormComment = () => {
   const [textArea, setTextArea] = useState(false);
-  const value = useSelector(state => state.comment);
+  const value = useSelector(state => state.commentReducer.comment);
   const dispatch = useDispatch();
 
   const commentSubmit = (e) => {
