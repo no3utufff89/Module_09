@@ -8,8 +8,11 @@ import Markdown from 'markdown-to-jsx';
 import {Text} from '../../UI/Text';
 import FormComment from '../Main/List/Post/FormComment';
 import Comments from '../Main/List/Post/Comments';
+import {useParams, useNavigate} from 'react-router-dom';
 
-export const Modal = ({id, closeModal}) => {
+export const Modal = () => {
+  const {id, page} = useParams();
+  const navigate = useNavigate();
   const overlayRef = useRef(null);
 
   const [comments, postData] = useCommentsData(id);
@@ -17,13 +20,13 @@ export const Modal = ({id, closeModal}) => {
   const hadleClick = e => {
     const target = e.target;
     if (target === overlayRef.current) {
-      closeModal();
+      navigate(`/category/${page}`);
     }
   };
   const keyPress = e => {
     const keyTarget = e.keyCode;
     if (keyTarget === 27) {
-      closeModal();
+      navigate(`/category/${page}`);
     }
   };
   useEffect(() => {
@@ -67,7 +70,9 @@ export const Modal = ({id, closeModal}) => {
         ) : (
           `Загрузка...`
         )}
-        <button className={style.close} onClick={() => closeModal()}>
+        <button className={style.close} onClick={() => {
+          navigate(`/category/${page}`);
+        }}>
           <IconClose/>
         </button>
       </div>
