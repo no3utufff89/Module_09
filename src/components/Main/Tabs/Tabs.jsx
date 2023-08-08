@@ -11,7 +11,7 @@ import {debounceRaw} from '../../../utils/debounce';
 import {useNavigate} from 'react-router-dom';
 
 const LIST = [
-  {value: 'Главная', Icon: HomeIcon, link: 'home'},
+  {value: 'Главная', Icon: HomeIcon, link: 'rising'},
   {value: 'Топ', Icon: TopIcon, link: 'top'},
   {value: 'Лучшие', Icon: BestIcon, link: 'best'},
   {value: 'Горячие', Icon: HotIcon, link: 'hot'},

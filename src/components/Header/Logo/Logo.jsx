@@ -1,6 +1,5 @@
 import style from './Logo.module.css';
 import SVG from '../../../UI/SVG';
-
 export const Logo = () => (
   <>
     <a className={style.link} href='/'>

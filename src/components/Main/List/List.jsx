@@ -3,8 +3,7 @@ import Post from './Post';
 import {useEffect, useRef} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {postsRequestAsync} from '../../../store/posts/postsAction';
-import {useParams} from 'react-router-dom';
-import {Outlet} from 'react-router';
+import {useParams, Outlet} from 'react-router-dom';
 
 export const List = () => {
   const posts = useSelector(state => state.postsReducer.data);

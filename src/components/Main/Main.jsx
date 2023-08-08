@@ -12,8 +12,8 @@ export const Main = () => (
     <Layout>
       <Tabs/>
       <Routes>
-        <Route path='/auth' element={<IndexPage/>}/>
-        <Route path='/category/home' element={<IndexPage/>}/>
+        <Route path='/' element={<IndexPage/>} errorElement={<Page404 />}/>
+        <Route path='/:auth' element={<IndexPage />} />
         <Route path='/category/:page' element={<List/>}>
           <Route path='post/:id' element={<Modal/>}/>
         </Route>
