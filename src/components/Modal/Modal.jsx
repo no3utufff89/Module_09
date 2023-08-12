@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
 import style from './Modal.module.css';
-import {ReactComponent as IconClose} from './img/close.svg';
+import { ReactComponent as IconClose } from './img/close.svg';
 import ReactDOM from 'react-dom';
-import {useEffect, useRef} from 'react';
-import {useCommentsData} from '../../hooks/useCommentsData';
+import { useEffect, useRef } from 'react';
+import { useCommentsData } from '../../hooks/useCommentsData';
 import Markdown from 'markdown-to-jsx';
-import {Text} from '../../UI/Text';
+import { Text } from '../../UI/Text';
 import FormComment from '../Main/List/Post/FormComment';
 import Comments from '../Main/List/Post/Comments';
-import {useParams, useNavigate} from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 export const Modal = () => {
-  const {id, page} = useParams();
+  const { id, page } = useParams();
   const navigate = useNavigate();
   const overlayRef = useRef(null);
 
   const [comments, postData] = useCommentsData(id);
-
+  console.log(`postData`, postData);
   const hadleClick = e => {
     const target = e.target;
     if (target === overlayRef.current) {
@@ -49,9 +49,9 @@ export const Modal = () => {
                 a: {
                   props: {
                     target: 'blank',
-                  }
-                }
-              }
+                  },
+                },
+              },
             }}>
               {postData.selftext}
             </Markdown>
@@ -60,7 +60,7 @@ export const Modal = () => {
           )}
         </div>
         <Text
-          as='p'
+          as="p"
           className={style.author}>
           {postData.author}
         </Text>

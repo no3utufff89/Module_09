@@ -1,2 +1,3 @@
-import {Auth} from './Auth';
+import { Auth } from './Auth';
+
 export default Auth;

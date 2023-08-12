@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import style from './Comments.module.css';
 import Comment from './Comment';
-import {Text} from '../../../../../UI/Text';
+import { Text } from '../../../../../UI/Text';
 
-export const Comments = (comments) => {
-  const arr = [...comments.comments];
+export const Comments = (postData) => {
+  const arr = [...postData.comments];
   arr.pop();
   return (
     <ul className={style.list}>
@@ -13,7 +13,7 @@ export const Comments = (comments) => {
           <Comment key={item.data.id} item={item.data}/>
         ))
       ) : (
-        <Text as='p'>Нет комментариев</Text>
+        <Text as="p">Нет комментариев</Text>
       )}
     </ul>
   );

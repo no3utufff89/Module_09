@@ -1,2 +1,3 @@
-import {SVG} from './SVG';
+import { SVG } from './SVG';
+
 export default SVG;

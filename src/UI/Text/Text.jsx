@@ -22,12 +22,12 @@ export const Text = (prop) => {
     className,
     style[`fs${size}`],
     style[color],
-    {[style.center]: center},
-    {[style.medium]: medium},
-    {[style.bold]: bold},
-    {[style[`fs${size}`]]: size},
-    {[style[`fst${tsize}`]]: tsize},
-    {[style[`fsd${dsize}`]]: dsize}
+    { [style.center]: center },
+    { [style.medium]: medium },
+    { [style.bold]: bold },
+    { [style[`fs${size}`]]: size },
+    { [style[`fst${tsize}`]]: tsize },
+    { [style[`fsd${dsize}`]]: dsize },
   );
 
   return <As

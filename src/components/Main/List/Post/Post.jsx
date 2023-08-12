@@ -6,8 +6,9 @@ import Date from './Date';
 import Rating from './Rating';
 import Delete from './Delete';
 
-export const Post = ({postData}) => {
-  const {title,
+export const Post = ({ postData }) => {
+  const {
+    title,
     author,
     id,
     ups,

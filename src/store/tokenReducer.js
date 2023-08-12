@@ -1,4 +1,4 @@
-import {setToken} from '../api/token';
+import { setToken } from '../api/token';
 
 const UPDATE_TOKEN = 'UPDATE_TOKEN';
 const DELETE_TOKEN = 'DELETE_TOKEN';

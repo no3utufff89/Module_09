@@ -1,2 +1,3 @@
-import {FormComment} from './FormComment';
+import { FormComment } from './FormComment';
+
 export default FormComment;

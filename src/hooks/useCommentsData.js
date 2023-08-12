@@ -1,6 +1,6 @@
-import {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {commentsRequestAsync} from '../store/comments/commentsAction';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { commentsRequestAsync } from '../store/comments/commentsAction';
 
 export const useCommentsData = (id) => {
   const dispatch = useDispatch();
